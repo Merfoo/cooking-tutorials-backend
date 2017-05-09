@@ -1,0 +1,25 @@
+{
+  "name": "cooking-tutorials-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodejs index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Merfoo/cooking-tutorials-backend.git"
+  },
+  "author": "Fauzi Kliman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Merfoo/cooking-tutorials-backend/issues"
+  },
+  "homepage": "https://github.com/Merfoo/cooking-tutorials-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  }
+}
