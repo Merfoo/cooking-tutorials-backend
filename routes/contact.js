@@ -1,3 +1,4 @@
+var mailer = require("../emailer");
 var express = require("express");
 var request = require("request");
 var router = express.Router();
@@ -19,6 +20,7 @@ router.post("/", (req, res) => {
     }
   }, (error, response, body) => {
     if (body.success) {
+      mailer(req.body["email"], process.env.EMAIL_USERNAME, req.body["name"], req.body["content"]);
       res.json({ "success": true });
     }
 
