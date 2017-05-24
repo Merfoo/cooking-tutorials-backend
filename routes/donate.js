@@ -7,6 +7,7 @@ router.post("/", (req, res) => {
     amount: req.body["chargeAmount"],
     currency: "usd",
     description: "Donation to Cooking Tutorials",
+    receipt_email: req.body.email,
     source: req.body.stripeToken
   }, function (error, charge) {
     res.json(error);
