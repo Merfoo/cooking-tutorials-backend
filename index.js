@@ -9,7 +9,6 @@ var donate = require("./routes/donate");
 
 app.use(history());
 app.use("/", express.static("../cooking-tutorials/dist"));
-app.use(express.static("./public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/contact", contact);
