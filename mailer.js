@@ -1,6 +1,7 @@
-var nodemailer = require("nodemailer");
+/* eslint-disable no-console */
+const nodemailer = require("nodemailer");
 
-var transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: process.env.EMAIL_USERNAME,
@@ -12,7 +13,7 @@ module.exports = (from, to, subject, text) => {
   var mailOptions = {
     from: from,
     to: to,
-    subject: `${from}: ${subject}`,
+    subject: subject,
     text: text    
   };
 
@@ -23,4 +24,4 @@ module.exports = (from, to, subject, text) => {
 
     console.log("Message %s send: %s", info.messageId, info.response);
   });
-}
+};

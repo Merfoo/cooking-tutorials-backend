@@ -1,18 +1,10 @@
+/* eslint-disable no-console */
 require("dotenv").config();
 
-var express = require("express")
-var history = require("connect-history-api-fallback");
-var app = express();
-var bodyParser = require("body-parser");
-var contact = require("./routes/contact");
-var donate = require("./routes/donate");
+const express = require("express");
+const app = express();
 
-app.use(history());
-app.use("/", express.static("../cooking-tutorials/dist"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/contact", contact);
-app.use("/donate", donate);
+app.use("/", require("./routes/index"));
 
 app.listen(8080, () => {
   console.log("Listening on 8080");

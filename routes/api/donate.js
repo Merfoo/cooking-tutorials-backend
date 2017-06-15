@@ -1,15 +1,14 @@
-var stripe = require("stripe")(process.env.STRIPE_KEY);
-var express = require("express");
-var router = express.Router();
+const stripe = require("stripe")(process.env.STRIPE_KEY);
+const router = require("express").Router();
 
 router.post("/", (req, res) => {
-  var charge = stripe.charges.create({
+  stripe.charges.create({
     amount: req.body["chargeAmount"],
     currency: "usd",
     description: "Donation to Cooking Tutorials",
     receipt_email: req.body.email,
     source: req.body.stripeToken
-  }, function (error, charge) {
+  }, function (error) {
     res.json(error);
   });
 });
